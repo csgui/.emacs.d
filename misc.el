@@ -129,4 +129,10 @@
 (defalias 'ack-find-file 'ack-and-a-half-find-file)
 (defalias 'ack-find-file-same 'ack-and-a-half-find-file-same)
 
+;; Trailing whitespace before saving any buffer
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; Automatic indentation when press Enter key
+(global-set-key (kbd "RET") 'newline-and-indent)
+
 (provide 'misc)
