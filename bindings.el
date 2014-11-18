@@ -32,7 +32,7 @@
    ("C-M-n" scroll-up-five)
    ("M-k" kill-this-buffer)
    ("M-o" other-window)
-   ("C-c SPC" ace-jump-mode)
+   ("C-c C-SPC" ace-jump-mode)
    ("C-=" er/expand-region)
    ("M-1" delete-other-windows)
    ("M-2" split-window-below)
