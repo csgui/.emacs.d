@@ -144,7 +144,8 @@ there's a region, all lines that region covers will be duplicated."
         (setq min (point) max (point)))
       (comment-or-uncomment-region
        (progn (goto-char min) (line-beginning-position))
-       (progn (goto-char max) (line-end-position))))))
+       (progn (goto-char max) (line-end-position)))))
+    (next-line))
 
 (defun join-line-or-lines-in-region ()
   "Join this line or the lines in the selected region."
