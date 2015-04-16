@@ -40,8 +40,8 @@
 ;; Remove selected region if typing
 (pending-delete-mode 1)
 
-;; Shift + arrow key move cursor to buffer in arrow direction
-(windmove-default-keybindings 'shift)
+;; Meta + arrow key move cursor to buffer in arrow direction
+(windmove-default-keybindings 'meta)
 
 ;; Allow some commands
 (dolist (command '(narrow-to-region downcase-region upcase-region))
@@ -50,7 +50,10 @@
 ;; CUA rectangle mode
 (setq cua-enable-cua-keys nil)
 (setq cua-toggle-set-mark nil)
-(cua-mode 1)
+(cua-mode t)
+(setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
+(transient-mark-mode 1) ;; No region when it is not highlighted
+(setq cua-keep-region-after-copy t) ;; Standard Windows behaviour
 
 ;; Prefer utf8
 (setq locale-coding-system 'utf-8)
@@ -105,6 +108,8 @@
 
 ;; Drag Stuff
 (require 'drag-stuff)
+;; Meta and Shift keys as modifier
+(setq drag-stuff-modifier '(meta shift))
 (add-to-list 'drag-stuff-except-modes 'org-mode)
 (drag-stuff-global-mode 1)
 
@@ -134,5 +139,13 @@
 
 ;; Automatic indentation when press Enter key
 (global-set-key (kbd "RET") 'newline-and-indent)
+
+;; Javascript indentation
+(setq js-indent-level 2)
+
+;; hiwin-mode
+(require 'hiwin)
+(hiwin-activate)
+(set-face-background 'hiwin-face "gray40")
 
 (provide 'misc)
