@@ -30,3 +30,6 @@
 ;; Load specific Mac Os X stuff
 (if (eq system-type 'darwin)
     (require 'osx))
+
+(setenv "PATH"
+        (concat (getenv "PATH") ":" "/usr/texbin"))
