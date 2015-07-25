@@ -11,3 +11,9 @@
     (add-to-list 'load-path file)))
 
 (add-to-list 'exec-path "/usr/local/bin")
+
+;; SML/NJ path
+(add-to-list 'exec-path "/usr/local/smlnj/bin")
+
+;; TEX path
+(add-to-list 'exec-path "/usr/texbin")
